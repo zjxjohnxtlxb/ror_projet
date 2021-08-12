@@ -1,0 +1,22 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'tower', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main id='container' ontouchstart="">
+	<div id="game"></div>
+	<div id="score">0</div>
+	<div id="instructions">Click (or press the spacebar) to place the block</div>
+	<div class="game-over">
+		<h2>Game Over</h2>
+		<p>You did great, you're the best.</p>
+		<p>Click or spacebar to back to profil</p>
+	</div>
+	<div class="game-ready">
+		<div id="start-button">Start</div>
+		<div></div>
+	</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<%= javascript_pack_tag 'tower'%>
+

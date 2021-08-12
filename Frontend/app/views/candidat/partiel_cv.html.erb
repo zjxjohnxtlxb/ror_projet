@@ -1,0 +1,20 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'partiel_cv', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> >
+        <article class="titre">
+            <div>Mon CV</div>
+        </article>
+        <article class="main">
+        <%=tag.iframe src: (asset_path('cv.pdf')+'#view=FitH&scrollbar=0&toolbar=0&statusbar=0&messages=0&navpanes=0'), type: "application/pdf",  frameborder: "0", class: "cv"%>
+            <article class="boutons">
+                <button id='working'>mettre à jour mon cv</button>
+                <button id='working'>Partager mon cv</button>
+            </article>
+        </article>
+    </div>
+</main>
+<%= javascript_pack_tag 'redirect'%>
+<%= javascript_pack_tag 'working'%>

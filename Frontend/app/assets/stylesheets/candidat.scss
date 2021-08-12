@@ -1,0 +1,259 @@
+// Place all the styles related to the candidat controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'application';
+
+//connexion
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.container {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr vw_calc(636px) 1fr;
+    grid-template-rows: 1fr vh_calc(789px) 1fr;
+    grid-template-areas:
+        "header header header"
+        ". main ."
+        "footer footer footer";
+    width: 100vw;
+    height: 100vh;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr vh_calc(789px) 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.header {
+    /* Positioning */
+    /* Box-model */
+    grid-area: header;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.footer {
+    /* Positioning */
+    /* Box-model */
+    grid-area: footer;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(678px) 1fr;
+    grid-template-areas:
+        "backgrouds"
+        "buttons";
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds {
+    /* Positioning */
+    /* Box-model */
+    grid-area: backgrouds;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(330px) 1fr 2fr;
+    grid-template-areas:
+        "logo"
+        "texte"
+        "inputs";
+    row-gap: vh_calc(20px);
+    align-items: stretch;
+    justify-items: center;
+    padding-top: vh_calc(50px);
+    padding-right: vw_calc(50px);
+    padding-bottom: vh_calc(50px);
+    padding-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    background-color: #F5F6F7;
+    /* Misc */
+}
+
+.boutons {
+    /* Positioning */
+    /* Box-model */
+    grid-area: buttons;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-logo {
+    /* Positioning */
+    /* Box-model */
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(203px) 1fr;
+    grid-template-areas:
+        "."
+        "texte";
+    /* Typography */
+    /* Visual */
+    border: 1px solid #707070;
+    border-radius: 50%;
+    background: transparent url(image_path("logo-big-circle.png")) center/cover no-repeat;
+    aspect-ratio: 1/1;
+    /* Misc */
+
+}
+
+.backgrounds-logo-texte {
+    /* Positioning */
+    /* Box-mode */
+    grid-area: texte;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(15px);
+    line-height: vh_calc(23px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-texte {
+    /* Positioning */
+    /* Box-model */
+    grid-area: texte;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(25px);
+    line-height: vh_calc(22px);
+    font-family: Poppins;
+    color: #6983A0;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs {
+    /* Positioning */
+    /* Box-model */
+    grid-area: inputs;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-label {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(10px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(15px);
+    line-height: vh_calc(23px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.boutons-inscript {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(10px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(50px);
+    padding-right: vw_calc(20px);
+    padding-left: vw_calc(20px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(70px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #404C5B;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+}
+
+.bouttons-connexion {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(10px);
+    padding-right: vw_calc(20px);
+    padding-left: vw_calc(20px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(33px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #6983A0;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+}

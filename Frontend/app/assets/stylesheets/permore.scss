@@ -1,0 +1,94 @@
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin-top: vh_calc(50px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(50px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article>label {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(12px);
+    margin-bottom: vh_calc(12px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(45px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: left;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+}
+
+.main>article>textarea {
+    /* Positioning */
+    /* Box-model */
+    height: vh_calc(220px);
+    padding-top: vh_calc(20px);
+    padding-right: vw_calc(20px);
+    padding-bottom: vh_calc(20px);
+    padding-left: vw_calc(20px);
+    margin-top: vh_calc(12px);
+    margin-right: vw_calc(12px);
+    margin-bottom: vh_calc(12px);
+    margin-left: vw_calc(12px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(36px);
+    font-family: Poppins;
+    color: #707070;
+    text-align: left;
+    /* Visual */
+    box-shadow: 0px 3px 6px #00000005;
+    border: 1px solid #BCBCBC;
+    border-radius: 6px;
+    /* Misc */
+}   

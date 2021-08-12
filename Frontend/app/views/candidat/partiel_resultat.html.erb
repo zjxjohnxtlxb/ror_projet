@@ -1,0 +1,29 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'partiel_resultat', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> >
+        <article class="titre">
+            <div>Mes résultats</div>
+            <%= link_to "Mon espace de laboratoire", {controller: "laboratoire", action: "index", prenom:@utilisateur['prenom'], nom:@utilisateur['nom']}, class: "position-absolute  end-0 btn btn-color2", target: :_blank %>
+        </article>
+        <nav class="menu">
+            <li id="per" data-turbolinks="false">
+                <a href="#per" id='a_per'>Personnalité</a>
+                <label></label>
+            </li>
+            <li id="cog" data-turbolinks="false">
+                <a href="#cog" id='a_cog'>Agilité cognitive</a>
+                <label></label>
+            </li>
+            <li id="soc" data-turbolinks="false">
+                <a href="#soc"  id='a_soc'>Agilité Sociale</a>
+                <label></label>
+            </li>
+        </nav>
+        <iframe id="option" class='main' src="cog"></iframe>
+    </div>
+</main>
+<%= javascript_pack_tag 'resultat'%>
+<%= javascript_pack_tag 'redirect'%>

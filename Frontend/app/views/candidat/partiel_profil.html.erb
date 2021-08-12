@@ -1,0 +1,77 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'partiel_profil', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+        <% flash.each do |type, msg| %>
+        <div class="mt-2 flash alert alert-<%= type %>">
+            <%= msg%>
+        </div>
+        <% end %>
+    <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> >
+        <article class="titre">
+            <div>Mon profil</div>
+        </article>
+        <article class="main">
+            <article>
+                <section class="identity">
+                    <div class="main-logo"><label class="logo"></label></div>
+                    <div class="main-option">
+                        <div class="main-option-titre">Identity test</div>
+                        <button id='identity' class="main-option-button stretched-link">jouer</button>
+                        <div class="main-option-score">
+                        <% unless @profil_score['identity'].blank? %>
+                            <div>score</div><%=@profil_score['identity']%></div>
+                        <%end %>
+                    </div>
+                </section>
+                <div class="main-description">Découvrez ce qui vous rend unique !</div>
+            </article>
+            <article>
+                <section class="social">
+                    <div class="main-logo"><label class="logo"></label></div>
+                    <div class="main-option">
+                        <div class="main-option-titre">Social Game</div>
+                        <button id='social' class="main-option-button stretched-link">jouer</button>
+                        <div class="main-option-score">
+                        <% unless @profil_score['social'].blank? %>
+                            <div>score</div><%=@profil_score['social']%></div>
+                        <%end %>
+                    </div>
+                </section>
+                <div class="main-description">Un pour tous, tous pour un !</div>
+            </article>
+            <article>
+                <section class="logic">
+                    <div class="main-logo"><label class="logo"></label></div>
+                    <div class="main-option">
+                        <div class="main-option-titre">Logic game</div>
+                        <button id='logic' class="main-option-button stretched-link">jouer</button>
+                        <div class="main-option-score">
+                        <% unless @profil_score['logic'].blank? %>
+                            <div>score</div><%=@profil_score['logic']%></div>
+                        <%end %>
+                    </div>
+                </section>
+                <div class="main-description">Soyez logique et tout se passera bien !</div>
+            </article>
+            <article>
+                <section class="pich">
+                    <div class="main-logo"><label class="logo"></label></div>
+                    <div class="main-option">
+                        <div class="main-option-titre">Pitch video</div>
+                        <button id='working' class="main-option-button stretched-link">jouer</button>
+                        <div class="main-option-score">
+                        <% unless @profil_score['pich'].blank? %>
+                            <div>score</div><%=@profil_score['pich']%></div>
+                        <%end %>
+                    </div>
+                </section>
+                <div class="main-description">Pitchez, vous êtes filmé !</div>
+            </article>
+        </article>
+    </div>
+</main>
+<%= javascript_pack_tag 'redirect'%>
+<%= javascript_pack_tag 'working'%>
+<%= javascript_pack_tag 'jeu'%>

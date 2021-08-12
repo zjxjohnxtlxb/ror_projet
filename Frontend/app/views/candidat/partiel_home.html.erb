@@ -1,0 +1,74 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'partiel_home', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> >
+        <article class="titre">
+            <div>Dashboard</div>
+        </article>
+        <article class="backgrounds">
+            <div class="backgrounds-info">
+                <div class="backgrounds-username">Bonjour <span><%=  @utilisateur['prenom']%></span> !</div>
+                <div class="backgrounds-userinfo">
+                    <span><%=  @utilisateur['age']%> ans</span>
+                    <span>Lille</span>
+                    <span>Média planner</span>
+                </div>
+            </div>
+            <div class="backgrounds-photo">
+                <article id='test' class="photo">
+                    <label></label>
+                </article>
+            </div>
+        </article>
+        <article class="main">
+            <article class="compte">
+                <div class="main-logo"></div>
+                <div class="main-option">
+                    <%= link_to "Mon compte", {controller: "candidat", action: "partiel_compte"}, class: "main-option-titre stretched-link" %>
+                    <div class="main-option-description">
+                        <div><span><%=  @utilisateur['prenom']%> <span><%=  @utilisateur['nom'] %></div>
+                        <div>Mail : <%=  @utilisateur['email']%></div>
+                        <div>Tel : <%=  @utilisateur['telephone'] %></div>
+                        <div>Naissance : <%=  @utilisateur['dateDeNaissance']%></div>
+                    </div>
+                </div>
+            </article>
+            <article class="cv">
+                <div class="main-logo"></div>
+                <div class="main-option">
+                    <%= link_to "Mon CV", {controller: "candidat", action: "partiel_cv"}, class: "main-option-titre stretched-link" %>
+                    <div class="main-option-description">
+                        <div>Mettre à jour</div>
+                        <div>Partager le cv Abilitiz</div>
+                    </div>
+                </div>
+            </article>
+            <article class="profil">
+                <div class="main-logo"></div>
+                <div class="main-option">
+                    <%= link_to "Mon profil", {controller: "candidat", action: "partiel_profil"}, class: "main-option-titre stretched-link" %>
+                    <div class="main-option-description">
+                        <div>Identity test</div>
+                        <div>Social game</div>
+                        <div>Logic game </div>
+                        <div>Pitch video</div>
+                    </div>
+                </div>
+            </article>
+            <article class="resultat">
+                <div class="main-logo"></div>
+                <div class="main-option">
+                    <%= link_to "Mon résultats", {controller: "candidat", action: "partiel_resultat"}, class: "main-option-titre stretched-link" %>
+                    <div class="main-option-description">
+                        <div>Personnalité</div>
+                        <div>Agilité cognitive</div>
+                        <div>Agilité sociale</div>
+                    </div>
+                </div>
+            </article>
+        </article>
+    </div>
+</main>
+<%= javascript_pack_tag 'redirect'%>

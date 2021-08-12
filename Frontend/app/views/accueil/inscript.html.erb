@@ -1,0 +1,118 @@
+<% content_for :css do -%>
+  <% stylesheet_link_tag 'accueil', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div class="container">
+        <header class="header"></header>
+        <%= form_with scope: :utilisateur, class: "main", method: :post, id: 'inscript_form', :url => { controller: "accueil" , action: "inscript"} do |form| %>
+            <div class="backgrounds">
+                <article class="backgrounds-logo">
+                    <div class="backgrounds-logo-texte">Assessment game</div>
+                </article>
+                <article class="backgrounds-texte">Création de votre compte assessment game</article>
+                <article class="backgrounds-inputs">
+                    <label for="adm" class="backgrounds-inputs-label">Adresse mail</label>
+                    <%= form.text_field :email, id: "adm", required: true %>
+                    <div class="backgrounds-inputs-inner">
+                        <div class="backgrounds-inputs backgrounds-inputs-nom">
+                            <label for="nom" class="backgrounds-inputs-label">Nom</label>
+                            <%= form.text_field :nom, id: "nom", required: true %>
+                        </div>
+                        <div class="backgrounds-inputs backgrounds-inputs-prenom">
+                            <label for="prenom" class="backgrounds-inputs-label">Prénom</label>
+                            <%= form.text_field :prenom, id: "prenom", required: true %>
+                        </div>
+                    </div>
+                    <div class="backgrounds-inputs-inner">
+                        <div class="backgrounds-inputs backgrounds-inputs-nom">
+                            <%= form.label :roleNo, "Recruteur", class:"backgrounds-inputs-label" %>
+                            <%= form.radio_button :roleNo, "0" %>
+                        </div>
+                        <div class="backgrounds-inputs backgrounds-inputs-prenom">
+                            <%= form.label :roleNo, "Candidat", class:"backgrounds-inputs-label" %>
+                            <%= form.radio_button :roleNo, "1", :checked => true %>
+                        </div>
+                    </div>
+                    <label for="mdp" class="backgrounds-inputs-label">Mot de passe</label>
+                    <%= form.password_field :password, id: "mdp", required: true %>
+                    <label for="co-mdp" class="backgrounds-inputs-label">Confirmation du mot de passe</label>
+                    <%= form.password_field :password_confirmation, id: "co-mdp", required: true %>
+                    <div class="backgrounds-inputs-checkboxs">
+                        <div class="backgrounds-inputs-checkboxs-custom">
+                            <input type="checkbox" name="options" id="cgu" value="cgu"
+                                class="backgrounds-inputs-checkboxs-check">
+                            <label for="cgu"></label>
+                        </div>
+                        <label for="cgu" class="backgrounds-inputs-checkboxs-label">J’accepte les Conditions Générales
+                            d’Utilisation de l’application Abilitiz
+                            ainsi que sa Politique relative aux données à caractère personnel.</label>
+                        <div class="backgrounds-inputs-checkboxs-custom">
+                            <input type="checkbox" name="options" id="rgpd" value="rgpd"
+                                class="backgrounds-inputs-checkboxs-check">
+                            <label for="rgpd"></label>
+                        </div>
+                        <label for="rgpd" class="backgrounds-inputs-checkboxs-label">J’accepte que ces informations
+                            soient utilisées par Abilitiz dans le cadre de
+                            la relation commerciale qui peut en découler.</label>
+                        <div class="backgrounds-inputs-checkboxs-custom">
+                            <input type="checkbox" name="options" id="cookies" value="cookies"
+                                class="backgrounds-inputs-checkboxs-check">
+                            <label for="cookies"></label>
+                        </div>
+                        <label for="cookies" class="backgrounds-inputs-checkboxs-label">J’accepte l’utilisation de mes
+                            cookies.
+                            <%= link_to "En savoir
+                                plus.",{ controller: "accueil", action: "inscript", anchor: "declaration"}, method: :get %> 
+                        </label>
+                    </div>
+                </article>
+            </div>
+            <article class="boutons">
+                <%= form.submit "Rejoignez-nous", class: "boutons-inscript" %>
+                <%= link_to "Connectez vous", { action: "index" }, class: "bouttons-connexion" %>
+            </article>
+        <% end %>
+        <aside class="aside">
+            <article class="cookies" id="declaration">
+                <div class="cookies-content">
+                    <div class="cookies-content-h2">Déclaration relative aux cookies</div>
+                    <p>Ce site Web utilise des cookies. Les cookies nous permettent de personnaliser le contenu et les
+                        annonces,
+                        d'offrir des fonctionnalités relatives aux médias sociaux et d'analyser notre trafic. Nous
+                        partageons
+                        également des informations sur l'utilisation de notre site avec nos partenaires de médias
+                        sociaux,
+                        de
+                        publicité et d'analyse, qui peuvent combiner celles-ci avec d'autres informations que vous leur
+                        avez
+                        fournies ou qu'ils ont collectées lors de votre utilisation de leurs services. Vous consentez à
+                        nos
+                        cookies si vous continuez à utiliser notre site Web.</p>
+                    <p>Les cookies sont des petits fichiers textes qui
+                        peuvent être utilisés par les sites Web pour rendre l'expérience utilisateur plus efficace. La
+                        loi
+                        stipule que nous ne pouvons stocker des cookies sur votre appareil que s’ils sont strictement
+                        nécessaires au fonctionnement de ce site. Pour tous les autres types de cookies, nous avons
+                        besoin
+                        de
+                        votre permission. Ce site utilise différents types de cookies. Certains cookies sont placés par
+                        les
+                        services tiers qui apparaissent sur nos pages. À tout moment, vous pouvez modifier ou retirer
+                        votre
+                        consentement dès la Déclaration relative aux cookies sur notre site Web. </p>
+                    <p>Conformément à la loi « RGPD »,
+                        vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en
+                        contactant
+                        AssessFirst à l'adresse : privacy@assessfirst.com ou directement depuis votre compte
+                        AssessFirst".
+                    </p>
+                    <p>Paramétrer les cookies</p>
+                </div>
+                <%= link_to "fermer",{ controller: "accueil", action: "inscript", anchor: ""}, class:"cookies-link" %>
+            </article>
+        </aside>
+        <footer class="footer"></footer>
+    </div>
+</main>
+<%= javascript_pack_tag 'inscript'%>

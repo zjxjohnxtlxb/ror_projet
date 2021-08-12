@@ -1,0 +1,89 @@
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(700px) vh_calc(70px);
+    grid-template-areas:
+        "option"
+        "button";
+    margin-top: vh_calc(50px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(50px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main-option {
+    /* Positioning */
+    /* Box-model */
+    grid-area: option;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main-option>label {
+    /* Positioning */
+    /* Box-model */
+    width: vh_calc(450px);
+    height: vh_calc(450px);
+    margin-top: vh_calc(100px);
+    margin-right: vh_calc(20px);
+    /* Typography */
+    /* Visual */
+    background-color: #F4F4F4;
+    /* Misc */
+}
+
+.main-button {
+    /* Positioning */
+    /* Box-model */
+    grid-area: button;
+    justify-self: center;
+    min-width: vw_calc(300px);
+    height: vh_calc(70px);
+    
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(40px);
+    line-height: vh_calc(66px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #6983A0;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+}

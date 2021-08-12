@@ -1,0 +1,54 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'laboratoire', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+<main>
+    <div class="container-fluid">
+        <header class="header"></header>
+        <section class="main py-5 text-center" id="main">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <%= image_tag 'logo-big-header.png', class:"img-fluid" %>
+            <%= tag.div class:"lead" do%>
+            Bonjour, <%= params['prenom']%> <%= params['nom']%>, bienvenue sur <strong>abilitiz laboratoire</strong>
+            <%end%>
+        <p class='text-muted'>
+            nous travaillons pour l'instant sur cette fonctionnalité, veuillez patienter.
+        </p>
+        </section>
+        <aside class="aside">
+            <article class="logo"></article>
+            <nav class="menu">
+                <li id="home">
+                    <a href="">
+                        <label class="menu-home"></label>
+                    </a>
+                </li>
+                <li id="compte">
+                    <a href="">
+                        <label class="menu-contact"></label>
+                    </a>
+                </li>
+                <li id="profil">
+                    <a href="">
+                        <label class="menu-profil"></label>
+                    </a>
+                </li>
+                <li id="resultat">
+                    <a href="">
+                        <label class="menu-resultats"></label>
+                    </a>
+                </li>
+                <li id="cv">
+                    <a href="">
+                        <label class="menu-cv"></label>
+                    </a>
+                </li>
+            </nav>
+            <li class="deconnextion">
+                <a href="">
+                    <label></label>
+                </a>
+            </li>
+        </aside>
+        <footer class="footer"></footer>
+    </div>
+</main>

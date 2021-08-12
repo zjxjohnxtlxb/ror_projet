@@ -1,0 +1,29 @@
+ <% content_for :css do -%>
+   <% stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-<%= type %>">
+          <%= msg %>
+        </div>
+      <% end %>
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <%= image_tag 'logo-big-header.png', class:"img-fluid" %>
+        <p class="lead text-muted">
+          Bienvenue sur abilitiz, veuillez choisir votre type d'utilisateur
+        </p>
+        <p>
+          <%= link_to "Recruteur", {controller: "accueil", action: "connectable"}, class: "btn btn-color1 my-2",  id: 'working' %>
+          <%= link_to "Candidat", {controller: "candidat", action: "connexion"}, class: "btn btn-color2 my-2" %>
+        </p>
+        <p>
+        <%= link_to "Pas encore de compte ?", {controller: "accueil", action: "inscript"} %>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+<%= javascript_pack_tag 'working'%>

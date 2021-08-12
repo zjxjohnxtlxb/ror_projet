@@ -1,0 +1,104 @@
+<% content_for :css do -%>
+<% stylesheet_link_tag 'candidat_index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div class="container">
+        <header class="header"></header>
+        <iframe class="main" id="main" src="/candidat/partiel/home" allowfullscreen="true">
+        </iframe>
+        <aside class="aside">
+            <article class="logo"></article>
+            <nav class="menu">
+                <li id="home" data-turbolinks="false">
+                    <a href="#home" class='username'>
+                        <label class="menu-home"></label>
+                        <span>
+                            <span id="prenom">
+                            <%=@utilisateur['prenom']%>
+                            </span>
+                            <span id="nom">
+                            <%=@utilisateur['nom']%>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li id="compte" data-turbolinks="false">
+                    <a href="#compte">
+                        <label class="menu-contact"></label>
+                        <span>Mon
+                            compte</span>
+                    </a>
+                </li>
+                <li id="profil" data-turbolinks="false">
+                    <a href="#profil">
+                        <label class="menu-profil"></label>
+                        <span>Mon
+                            profil</span>
+                    </a>
+                </li>
+                <li id="resultat" data-turbolinks="false">
+                    <a href="#resultat">
+                        <label class="menu-resultats"></label>
+                        <span>Mes
+                            résultats</span>
+                    </a>
+                </li>
+                <li id="cv" data-turbolinks="false">
+                    <a href="#cv">
+                        <label class="menu-cv"></label>
+                        <span>Mon
+                            CV
+                            Abilitz</span>
+                    </a>
+                </li>
+            </nav>
+            <li class="deconnextion">
+                <a href="/candidat/deconnextion">
+                    <label></label>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </aside>
+        <footer class="footer">
+            <nav class="footer-menu">
+                <details>
+                    <summary>CONTACT</summary>
+                    <ul class="footer-menu-list">
+                        <li><span id='no-rue'>00</span> Rue <span id='address'>xxxxxxxx</span>, <span
+                                id='post-code'>59XXX</span> <span id='ville'>xxxxx</span>, <span>Nord</span></li>
+                        <li><span><%= @utilisateur['email']%></span></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>NAVIGATION</summary>
+                    <ul class="footer-menu-list">
+                        <li>Dashboard</li>
+                        <li>Mon compte</li>
+                        <li>Mon profil</li>
+                        <li>Mes résultats</li>
+                        <li>Mon CV</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>RESEAUX</summary>
+                    <ul class="footer-menu-list">
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Instagram</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>SUPPORT</summary>
+                    <ul class="footer-menu-list support">
+                        <li><label class="support-logo-contact"></label><span>Contact us</span></li>
+                        <li><label class="support-logo-faq"></label><span>FAQ</span></li>
+                    </ul>
+                </details>
+            </nav>
+            <article class="footer-logo"></article>
+        </footer>
+    </div>
+</main>
+<%= javascript_pack_tag 'candidat'%>

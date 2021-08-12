@@ -1,0 +1,172 @@
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin-top: vh_calc(50px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(50px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article>label {
+    /* Positioning */
+    /* Box-model */
+    flex: 1;
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(12px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(12px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(45px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: left;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+}
+
+.main>article>textarea {
+    /* Positioning */
+    /* Box-model */
+    flex: 3;
+    height: vh_calc(220px);
+    padding-top: vh_calc(20px);
+    padding-right: vw_calc(20px);
+    padding-bottom: vh_calc(20px);
+    padding-left: vw_calc(20px);
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(36px);
+    font-family: Poppins;
+    color: #707070;
+    text-align: left;
+    /* Visual */
+    box-shadow: 0px 3px 6px #00000005;
+    border: 1px solid #BCBCBC;
+    border-radius: 6px;
+    /* Misc */
+}
+
+.progress-bar {
+    /* Positioning */
+    /* Box-model */
+    flex: 1;
+    height: vh_calc(20px);
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    background-color: #F6F9F8;
+    box-shadow: 0px 0px 5px #0000000D;
+    border-radius: 34px;
+    /* Misc */
+}
+
+.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 50%;
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    background-color: #A6C2B8;
+    border-radius: 34px;
+    /* Misc */
+}
+
+.leadership>.progress-bar>.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 80%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.gestion>.progress-bar>.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 40%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.esprit>.progress-bar>.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 50%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.organisation>.progress-bar>.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 60%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.initiative>.progress-bar>.progress {
+    /* Positioning */
+    /* Box-model */
+    width: 70%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}

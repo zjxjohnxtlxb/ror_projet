@@ -1,0 +1,71 @@
+@baseUrl = http://localhost:3001
+### connect get test 
+GET {{baseUrl}}/connectable
+### connect post test
+POST {{baseUrl}}/connectable
+Content-Type: application/json
+
+### login recruteur
+POST {{baseUrl}}/connexion
+Content-Type: application/json
+
+{
+    "email": "junxizhang@efficom-lille.fr",
+    "password": "password"
+}
+### login candidat
+POST {{baseUrl}}/connexion
+Content-Type: application/json
+
+{
+    "email": "debelsMarvin@efficom-lille.fr",
+    "password": "password"
+}
+### auto login
+GET {{baseUrl}}/auto_connexion
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODM0NjM5NX0.T-CIlPKXcBO_V0wxw50fIcCtifXQmerggFzvYjmJdTw
+### compte
+GET {{baseUrl}}/compte
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODM0NjM5NX0.T-CIlPKXcBO_V0wxw50fIcCtifXQmerggFzvYjmJdTw
+
+### creat client
+POST {{baseUrl}}/utilisateur
+Content-Type: application/json
+
+{
+    "nom": "Zhang",
+    "prenom": "Junxi",
+    "roleNo": "0",
+    "email": "junxizhang@efficom-lille.fr",
+    "password": "password",
+    "password_confirmation": "password"
+}
+### update client
+PATCH {{baseUrl}}/candidats/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODUzNTc5OH0.0qoPzHA9X4luMrnRyUXM7g6xqaAHF4OSTPDwqcjdJYo
+
+{
+
+}
+### update client parcour
+PATCH {{baseUrl}}/candidats/4/parcours/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODUzNTc5OH0.0qoPzHA9X4luMrnRyUXM7g6xqaAHF4OSTPDwqcjdJYo
+
+{
+     "experience": "1 an"
+}
+### creat client parcour
+POST {{baseUrl}}/candidats/4/parours
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODUzNTc5OH0.0qoPzHA9X4luMrnRyUXM7g6xqaAHF4OSTPDwqcjdJYo
+
+{
+  "experience": "test",
+  "metier": "test",
+  "secteur": "test"
+}
+### delete client parcour
+DELETE {{baseUrl}}/candidats/4/parours/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODUzNTc5OH0.0qoPzHA9X4luMrnRyUXM7g6xqaAHF4OSTPDwqcjdJYo

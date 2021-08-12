@@ -1,0 +1,464 @@
+@import 'application';
+
+// index
+.btn-color2 {
+    color: white;
+
+    &:hover {
+        color: white;
+    }
+}
+
+//inscript
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.container {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr vw_calc(662px) 1fr;
+    grid-template-rows: 1fr vh_calc(980px) 1fr;
+    grid-template-areas:
+        "header header header"
+        ". main cookies"
+        "footer footer footer";
+    width: 100vw;
+    height: 100vh;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 4fr 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "cookies"
+            "footer";
+        overflow: scroll;
+    }
+
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.header {
+    /* Positioning */
+    /* Box-model */
+    grid-area: header;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.footer {
+    /* Positioning */
+    /* Box-model */
+    grid-area: footer;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.aside {
+    /* Positioning */
+    /* Box-model */
+    grid-area: cookies;
+    margin-top: vh_calc(30px);
+    margin-right: vw_calc(30px);
+    margin-bottom: vh_calc(30px);
+    margin-left: vw_calc(30px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.cookies {
+    /* Positioning */
+    /* Box-model */
+    display: none;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+
+.cookies-content-h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: vh_calc(50px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(27px);
+    font-family: Poppins;
+    color: #404C5B;
+    text-transform: uppercase;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.cookies-content>p {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: vh_calc(15px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(18px);
+    line-height: vh_calc(27px);
+    font-family: Poppins;
+    color: #707070;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.cookies-link {
+    /* Positioning */
+    /* Box-model */
+    align-self: flex-end;
+    padding: 10px 20px;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(33px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* Visual */
+    background-color: #404C5B;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+
+}
+
+article[id="declaration"]:target {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(951px) 1fr;
+    grid-template-areas:
+        "backgrouds"
+        "buttons";
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds {
+    /* Positioning */
+    /* Box-model */
+    grid-area: backgrouds;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(330px) 1fr 4fr 3fr;
+    grid-template-areas:
+        "logo"
+        "texte"
+        "inputs"
+        "checkboxs";
+    row-gap: vh_calc(20px);
+    align-items: stretch;
+    justify-items: center;
+    padding-top: vh_calc(50px);
+    padding-right: vw_calc(50px);
+    padding-bottom: vh_calc(50px);
+    padding-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    background-color: #F5F6F7;
+    /* Misc */
+}
+
+.boutons {
+    /* Positioning */
+    /* Box-model */
+    grid-area: buttons;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-logo {
+    /* Positioning */
+    /* Box-model */
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(203px) 1fr;
+    grid-template-areas:
+        "."
+        "texte";
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #707070;
+    border-radius: 50%;
+    background: transparent url(image_path("logo-big-circle.png")) center/cover no-repeat;
+    aspect-ratio: 1/1;
+    /* Misc */
+
+}
+
+.backgrounds-logo-texte {
+    /* Positioning */
+    /* Box-mode */
+    grid-area: texte;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(15px);
+    line-height: vh_calc(23px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-texte {
+    /* Positioning */
+    /* Box-model */
+    grid-area: texte;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(25px);
+    line-height: vh_calc(22px);
+    font-family: Poppins;
+    color: #6983A0;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs {
+    /* Positioning */
+    /* Box-model */
+    grid-area: inputs;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-label {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(10px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(15px);
+    line-height: vh_calc(23px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-inner {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-nom {
+    /* Positioning */
+    /* Box-model */
+    padding-right: vw_calc(8px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-prenom {
+    /* Positioning */
+    /* Box-model */
+    padding-left: vw_calc(8px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-checkboxs {
+    /* Positioning */
+    /* Box-model */
+    grid-area: checkboxs;
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-checkboxs-custom {
+    display: flex;
+    flex-direction: row;
+}
+
+.backgrounds-inputs-checkboxs-label {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(10px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-size: vh_calc(12px);
+    line-height: vh_calc(18px);
+    font-family: Poppins;
+    color: #262626;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.backgrounds-inputs-checkboxs-check {
+    background-color: black;
+}
+
+.backgrounds-inputs-checkboxs-custom>label {
+    /* Positioning */
+    /* Box-model */
+    display: inline-block;
+    height: vh_calc(14px);
+    min-height: 10px;
+    margin-top: vh_calc(10px);
+    /* Typography */
+    /* Visual */
+    cursor: pointer;
+    border: 1px solid #000000;
+    aspect-ratio: 1/1;
+    /* Misc */
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label {
+    background-color: #FFFFFF;
+}
+
+input[type=checkbox]:checked+label {
+    background:
+        linear-gradient(#E1D69B, #E1D69B) center/75% 75% no-repeat;
+}
+
+.boutons-inscript {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(10px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(50px);
+    padding-right: vw_calc(20px);
+    padding-left: vw_calc(20px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(33px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #404C5B;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+    &:hover{
+        color :white;
+    }
+}
+
+.bouttons-connexion {
+    /* Positioning */
+    /* Box-model */
+    margin-top: vh_calc(20px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(20px);
+    margin-left: vw_calc(10px);
+    padding-right: vw_calc(20px);
+    padding-left: vw_calc(20px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(33px);
+    font-family: Poppins;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #6983A0;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+    &:hover{
+        color :white;
+    }
+}

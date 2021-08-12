@@ -1,0 +1,86 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'partiel_compte', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> data-referrer= <%= $referrer.to_json %>>
+        <article class="titre">
+            <div>Mon compte</div>
+        </article>
+        <% flash.each do |type, msg| %>
+        <div class="mt-2 flash alert alert-<%= type %>">
+            <%= msg.html_safe%>
+        </div>
+        <% end %>
+        <%= form_with scope: :compte, id: "main", class: "main", method: :post, :url => { controller: "candidat" , action: "partiel_compte"} do |form| %>
+            <article>
+                <header class='options'>INFORMATIONS personnelles</header>
+                <section class='options-contenu'>
+                    <label>Prénom</label>
+                    <input id='utilisateur[prenom]' type="text" value="<%= @utilisateur_compte['prenom'] %>">
+                    <label>Nom</label>
+                    <input id='utilisateur[nom]' type="text" value="<%= @utilisateur_compte['nom'] %>">
+                    <label>Adresse mail</label>
+                    <input id='utilisateur[email]' type="text" value="<%= @utilisateur_compte['email'] %>">
+                    <label>N° de téléphone</label>
+                    <input id='utilisateur[telephone]' type="text" value="<%= @utilisateur_compte['telephone'] %>">
+                    <label>Date de naissance</label>
+                    <input id='utilisateur[dateDeNaissance]' type="text" value="<%= @utilisateur_compte['dateDeNaissance'] %>">
+                </section>
+            </article>
+            <article>
+                <header class='options'>INFORMATIONS PROFESSIONNELLES</header>
+                <section class='options-contenu'>
+                    <label>Niveau d’experience</label>
+                    <input id='utilisateur[niveauExperience]' type="text" value="<%= @utilisateur_compte['niveauExperience'] %>">
+                    <label>Diplôme</label>
+                    <input id='utilisateur[diplome]' type="text" disabled placeholder= 'inusable'>
+                    <label>Poste visé</label>
+                    <input id='utilisateur[postev]' type="text" disabled placeholder= 'inusable'>
+                </section>
+            </article>
+            <article>
+                <header class='options'>Passions</header>
+                <section class='options-contenu'>
+                    <label>Première activité</label>
+                    <input id='utilisateur[passion1]' type="text"  value="<%= @utilisateur_compte['passion1'] %>">
+                    <label>Deuxième activité</label>
+                    <input id='utilisateur[passion2]' type="text"  value="<%= @utilisateur_compte['passion2'] %>">
+                    <label>Troisième activité</label>
+                    <input id='utilisateur[passion3]' type="text"  value="<%= @utilisateur_compte['passion3'] %>">
+                </section>
+            </article>
+            <article>
+                <header class='options'>Parcours professionnel</header>
+                <section id='parcours' class='options-contenu'>
+                    <% @parcours.each do |parcour| %>
+                        <div>
+                            <hr>
+                            <label>Métier</label>
+                            <input id='parcour[<%= parcour['id'] %>][metier]' type="text" value="<%= parcour['metier'] %>">
+                            <label>Secteur</label>
+                            <input id='parcour[<%= parcour['id'] %>][secteur]' type="text" value="<%= parcour['secteur'] %>">
+                            <label>Experiences</label>
+                            <input id='parcour[<%= parcour['id'] %>][experience]' type="text" value="<%= parcour['experience'] %>">
+                            <div><input id='parcour[<%= parcour['id'] %>][delete]' type='checkbox' value='delete'><label class='ms-1'>Remove</label></div>
+                        </div>
+                    <% end %>
+                    <button type="button" id='add-parcours' class="mt-2 options-bouton">Ajouter cet expérience</button>
+                </section>
+            </article>
+            <article>
+                <header class='options'>Connexion</header>
+                <section class='options-contenu'>
+                    <label>Ancien mot de passe</label>
+                    <input id='utilisateur[password]' type="password">
+                    <label>Nouveau mot de passe</label>
+                    <input id='newPassword' type="password">
+                    <label>Confirmer le nouveau mot de passe</label>
+                    <input id='password_confirmation' type="password">
+                    <button type="submit" class="options-bouton">Valider le changement</button>
+                </section>
+            </article>
+        <% end %>
+    </main>
+<%= javascript_pack_tag 'compte'%>
+<%= javascript_pack_tag 'redirect'%>

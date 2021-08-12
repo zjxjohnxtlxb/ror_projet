@@ -1,0 +1,225 @@
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "round element .";
+    justify-items: center;
+    align-items: center;
+    margin-top: vh_calc(50px);
+    margin-right: vw_calc(50px);
+    margin-bottom: vh_calc(50px);
+    margin-left: vw_calc(50px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.round {
+    /* Positioning */
+    /* Box-model */
+    grid-area: round;
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.round-memoire {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vh_calc(771px);
+    height: vh_calc(771px);
+    /* Typography */
+    /* Visual */
+    border-width: vh_calc(45px);
+    border-style: solid;
+    border-color: #FEE698;
+    border-radius: 50%;
+    /* Misc */
+}
+
+.round-definition {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vh_calc(645px);
+    height: vh_calc(645px);
+    /* Typography */
+    /* Visual */
+    border-width: vh_calc(45px);
+    border-style: solid;
+    border-color: #9AB8D5;
+    border-radius: 50%;
+    /* Misc */
+}
+
+.round-logique {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vh_calc(510px);
+    height: vh_calc(510px);
+    /* Typography */
+    /* Visual */
+    border-width: vh_calc(45px);
+    border-style: solid;
+    border-color: #EDA3A3;
+    border-radius: 50%;
+    /* Misc */
+}
+
+.round-sementique {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vh_calc(381px);
+    height: vh_calc(381px);
+    /* Typography */
+    /* Visual */
+    border-width: vh_calc(45px);
+    border-style: solid;
+    border-color: #A2E2A8;
+    border-radius: 50%;
+    /* Misc */
+}
+
+.score {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    font-size: vh_calc(150px);
+    line-height: vh_calc(200px);
+    font-family: Poppins;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+}
+
+.element {
+    /* Positioning */
+    /* Box-model */
+    grid-area: element;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.element>div {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "logo option";
+    margin-top: vh_calc(50px);
+    margin-bottom: vh_calc(50px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.element>div>label {
+    /* Positioning */
+    /* Box-model */
+    grid-area: logo;
+    width: vh_calc(45px);
+    height: vh_calc(45px);
+    /* Typography */
+    /* Visual */
+    border-radius: 50%;
+    /* Misc */
+}
+
+.element>div>div {
+    /* Positioning */
+    /* Box-model */
+    grid-area: option;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: vh_calc(30px);
+    line-height: vh_calc(45px);
+    font-family: Poppins;
+    color: #707070;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
+
+.element-memoire>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #FEE698;
+    /* Misc */
+}
+
+.element-definition>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #9AB8D5;
+    /* Misc */
+}
+
+.element-logique>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #EDA3A3;
+    /* Misc */
+}
+
+.element-sementique>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #A2E2A8;
+    /* Misc */
+}

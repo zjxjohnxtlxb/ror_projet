@@ -1,0 +1,21 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'quizz', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main ontouchstart="">
+<h1>Game of Thrones</h1>
+<h2></h2>
+
+<p id="image"></p>
+<div id="back-container" style="display:none;"><button id="back">Back to profil</button></div>
+<ul>
+    <li><button class="submit-answer" id="0"></button></li>
+    <li><button class="submit-answer" id="1"></button></li>
+    <li><button class="submit-answer" id="2"></button></li>
+    <li><button class="submit-answer" id="3"></button></li>
+</ul>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%= javascript_pack_tag 'quizz'%>
+
+

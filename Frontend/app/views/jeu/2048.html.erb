@@ -1,0 +1,21 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag '2048', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+<main class="container">
+  <div class="scores">
+    <div class="score-container">
+      score: 
+      <div class="score">
+        <div id="score">0</div>
+        <div class="add" id="add"></div>
+      </div>
+    </div>
+  </div>
+  <div class="game">
+    <div id="tile-container" class="tile-container"></div>
+    <div class="end" id="end">Game Over<div class="monkey">🙈</div><button class="btn not-recommended__item js-back-btn">Back to profil</button></div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+<%= javascript_pack_tag '2048'%>
+

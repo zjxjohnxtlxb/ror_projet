@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identity: MyString
+  social: MyString
+  logic: MyString
+  pitch: MyString
+  utilisateur: one
+
+two:
+  identity: MyString
+  social: MyString
+  logic: MyString
+  pitch: MyString
+  utilisateur: two

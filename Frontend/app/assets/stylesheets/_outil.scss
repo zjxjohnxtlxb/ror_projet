@@ -1,0 +1,7 @@
+@function vw_calc($width) {
+    @return $width/1920px*100vw;
+}
+
+@function vh_calc($height) {
+    @return $height/1080px*100vh;
+}

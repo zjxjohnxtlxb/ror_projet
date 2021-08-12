@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  resultat: 1
+  dateScores: 2021-07-27
+  utilisateur: one
+  jeu: one
+  softskill: one
+
+two:
+  resultat: 1
+  dateScores: 2021-07-27
+  utilisateur: two
+  jeu: two
+  softskill: two

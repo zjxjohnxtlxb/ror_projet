@@ -1,0 +1,34 @@
+ <% content_for :css do -%>
+  <% stylesheet_link_tag 'candidat', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+
+<main>
+    <div class="container">
+        <header class='header'>
+            <% flash.each do |type, msg| %>
+                <div class="my-2 alert alert-<%= type %>">
+                    <%= msg %>
+                </div>
+            <% end %>
+        </header>
+        <%= form_with scope: :utilisateur, class: "main", method: :post, :url => { controller: "candidat" , action: "connexion"} do |form| %>
+            <div class='backgrounds'>
+                <article class='backgrounds-logo'>
+                    <div class='backgrounds-logo-texte'>Jeu, test & match</div>
+                </article>
+                <article class='backgrounds-texte'>Connexion à votre espace candidat</article>
+                <article class='backgrounds-inputs'>
+                    <label for='adm' class='backgrounds-inputs-label'>Adresse mail</label>
+                    <%= form.text_field :email, id: "adm", required: true %>
+                    <label for='mdp' class='backgrounds-inputs-label'>Mot de passe</label>
+                    <%= form.password_field :password, id: "mdp", required: true %>
+                </article>
+            </div>
+            <article class='boutons'>
+                <%= link_to "Pas de compte ?", {controller: "accueil", action: "inscript"}, class: "boutons-inscript" %>
+                <%= form.submit "Connectez Vous", class: "bouttons-connexion" %>
+            </article>
+        <% end %>
+        <footer class='footer'></footer>
+    </div>
+</main>

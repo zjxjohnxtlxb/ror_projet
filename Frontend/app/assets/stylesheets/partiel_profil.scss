@@ -1,0 +1,321 @@
+@import 'bootstrap';
+@import '_outil';
+@import '_init';
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+* {
+    /* Positioning */
+    /* Box-model */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.container {
+    /* Positioning */
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: vh_calc(150px) 1fr;
+    grid-template-areas:
+        "titre"
+        "main";
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.titre {
+    /* Positioning */
+    /* Box-model */
+    display: flex;
+    align-items: flex-end;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: vh_calc(40px);
+    line-height: vh_calc(60px);
+    font-family: Poppins;
+    color: #000000;
+    /* Visual */
+    /* Misc */
+}
+
+.main {
+    /* Positioning */
+    /* Box-model */
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: vh_calc(300px) vh_calc(300px);
+    grid-template-areas:
+        "identity social"
+        "logic pich";
+    column-gap: vh_calc(18px);
+    padding-bottom: vh_calc(50px);
+    margin-top: vh_calc(100px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article {
+    /* Positioning */
+    position: relative;
+    /* Box-model */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas:
+        "backgrounds"
+        "description";
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main>article>section {
+    /* Positioning */
+    /* Box-model */
+    grid-area: backgrounds;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "icon option";
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+
+.main-logo {
+    /* Positioning */
+    /* Box-model */
+    grid-area: icon;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". logo ."
+        ". . .";
+    justify-items: center;
+    min-width: vh_calc(150px);
+    min-height: vh_calc(150px);
+    max-width: vh_calc(150px);
+    max-height: vh_calc(150px);
+    margin-top: vh_calc(45px);
+    margin-right: vw_calc(45px);
+    margin-bottom: vh_calc(45px);
+    margin-left: vw_calc(80px);
+    /* Typography */
+    /* Visual */
+    background: rgba(255, 255, 255, 0.45);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    /* Misc */
+}
+
+.logo {
+    /* Positioning */
+    /* Box-model */
+    grid-area: logo;
+    width: 100%;
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    background-size: cover;
+    /* Misc */
+}
+
+.identity {
+    /* Positioning */
+    /* Box-model */
+    grid-area: identity;
+    /* Typography */
+    /* Visual */
+    background-color: #6E63AA;
+    border-radius: 25px;
+    /* Misc */
+}
+
+.identity>.main-logo>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-image: url(image_path('identity-small-w.png'));
+    /* Misc */
+}
+
+.social>.main-logo>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-image: url(image_path('social-small-w.png'));
+    /* Misc */
+}
+
+.logic>.main-logo>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-image: url(image_path('logic-small-w.png'));
+    /* Misc */
+}
+
+.pich>.main-logo>label {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-image: url(image_path('pitch-small-w.png'));
+    /* Misc */
+}
+
+.social {
+    /* Positioning */
+    /* Box-model */
+    grid-area: social;
+    /* Typography */
+    /* Visual */
+    background-color: #D4CDEC;
+    border-radius: 25px;
+    /* Misc */
+}
+
+.logic {
+    /* Positioning */
+    /* Box-model */
+    grid-area: logic;
+    /* Typography */
+    /* Visual */
+    background-color: #DE85A9;
+    border-radius: 25px;
+    /* Misc */
+}
+
+.pich {
+    /* Positioning */
+    /* Box-model */
+    grid-area: pich;
+    /* Typography */
+    /* Visual */
+    background-color: #EFD786;
+    border-radius: 25px;
+    /* Misc */
+}
+
+.stretched-link {
+    &:hover {
+        color: #000000;
+    }
+}
+
+.main-option {
+    /* Positioning */
+    /* Box-model */
+    grid-area: option;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+        "titre score"
+        "button score";
+    margin-top: vh_calc(45px);
+    margin-bottom: vh_calc(45px);
+    /* Typography */
+    /* Visual */
+    /* Misc */
+}
+.main-option-score{
+    /* Positioning */
+    /* Box-model */
+    grid-area: score;
+    justify-items: center;
+    align-self: center;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(25px);
+    line-height: vh_calc(38px);
+    font-family: Poppins;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+}
+
+.main-option-titre {
+    /* Positioning */
+    /* Box-model */
+    grid-area: titre;
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(25px);
+    line-height: vh_calc(38px);
+    font-family: Poppins;
+    color: #000000;
+    text-align: left;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+}
+
+.main-option-button {
+    /* Positioning */
+    /* Box-model */
+    grid-area: button;
+    max-width: vw_calc(200px);
+    max-height: vh_calc(70px);
+    margin-top: vh_calc(20px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: vh_calc(22px);
+    line-height: vh_calc(33px);
+    font-family: Poppins;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #F5F5F5;
+    box-shadow: 0px 3px 6px #00000005;
+    border-radius: 6px;
+    /* Misc */
+}
+
+.main-description {
+    /* Positioning */
+    /* Box-model */
+    grid-area: description;
+    margin-top: vh_calc(10px);
+    /* Typography */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-size: vh_calc(20px);
+    line-height: vh_calc(30px);
+    font-family: Poppins;
+    color: #000000;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+}
