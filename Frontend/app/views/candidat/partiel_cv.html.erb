@@ -10,8 +10,8 @@
         <article class="main">
         <%=tag.iframe src: (asset_path('cv.pdf')+'#view=FitH&scrollbar=0&toolbar=0&statusbar=0&messages=0&navpanes=0'), type: "application/pdf",  frameborder: "0", class: "cv"%>
             <article class="boutons">
-                <button id='working'>mettre à jour mon cv</button>
-                <button id='working'>Partager mon cv</button>
+                 <%= link_to "Download mon cv", asset_path('cv.pdf'), download: "cv.pdf"%>
+                <%= link_to "Partager mon cv", {controller: "candidat", action: "cv_partager"}, target: '_blank'%>
             </article>
         </article>
     </div>

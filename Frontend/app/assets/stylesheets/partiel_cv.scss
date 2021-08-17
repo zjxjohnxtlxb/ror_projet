@@ -89,7 +89,7 @@
     /* Misc */
 }
 
-.boutons>button {
+.boutons>button, .boutons>a{
     /* Positioning */
     /* Box-model */
     width: vw_calc(350px);
@@ -100,9 +100,11 @@
     font-variant: normal;
     font-weight: 600;
     font-size: vh_calc(22px);
-    line-height: vh_calc(33px);
+    line-height: vh_calc(66px);
     font-family: Poppins;
     color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     /* Visual */
     background-color: #6983A0;
