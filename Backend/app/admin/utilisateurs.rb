@@ -13,10 +13,12 @@ ActiveAdmin.register Utilisateur do
   sidebar "Utilisateur Details", only: [:show, :edit] do
     ul do
       li link_to "Parcour", admin_utilisateur_parcours_path(resource)
-      unless utilisateur.profil_score.present?
-        utilisateur.create_profil_score
+      if Utilisateur.is_candidat.find_by(id: utilisateur.id)
+        unless utilisateur.profil_score.present?
+          utilisateur.create_profil_score
+        end
+        li link_to "Profil Score", admin_utilisateur_profil_score_path(utilisateur, utilisateur.profil_score.id)
       end
-      li link_to "Profil Score", admin_utilisateur_profil_score_path(utilisateur, utilisateur.profil_score.id)
     end
   end
 
