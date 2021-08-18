@@ -1,3 +1,4 @@
+//= require social-share-button
 @import '_outil';
 @import '_init';
 
@@ -89,7 +90,8 @@
     /* Misc */
 }
 
-.boutons>button, .boutons>a{
+.boutons>button,
+.boutons>a {
     /* Positioning */
     /* Box-model */
     width: vw_calc(350px);

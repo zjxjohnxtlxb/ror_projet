@@ -7,7 +7,7 @@ class AccueilController < ApplicationController
   def connectable
       res = get "connectable"
       if res["status"] != "error"
-        flash[:info] = "Le serveur fonctionn très bien"
+        flash[:info] = "We are working on it"
       else
         flash[:danger] = "Erreur de connexion au serveur"
       end

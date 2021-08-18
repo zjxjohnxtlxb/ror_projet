@@ -73,6 +73,7 @@
     position: relative;
     /* Box-model */
     display: grid;
+    min-width: vh_calc(600px);
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 1fr;
     grid-template-areas:

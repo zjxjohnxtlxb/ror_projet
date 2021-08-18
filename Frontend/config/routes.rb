@@ -28,8 +28,6 @@ Rails.application.routes.draw do
     get "/candidat/partiel/cog" => :partiel_cog
     get "/candidat/partiel/cogmore" => :partiel_cogmore
 
-    get "/candidat/partiel/cv_partager" => :cv_partager
-
     get "/jeu/quizz" => :jeu_quizz
     get "/jeu/tower" => :jeu_tower
     get "/jeu/2048" => :jeu_2048

@@ -6,7 +6,7 @@
     <div id="container" class="container" data-source= <%= $check_redirect_to.to_json %> >
         <article class="titre">
             <div>Mes résultats</div>
-            <%= link_to "Mon espace de laboratoire", {controller: "laboratoire", action: "index", prenom:@utilisateur['prenom'], nom:@utilisateur['nom']}, class: "position-absolute  end-0 btn btn-color2", target: :_blank %>
+            <%= link_to "Direction le labo !", {controller: "laboratoire", action: "index", prenom:@utilisateur['prenom'], nom:@utilisateur['nom']}, class: "position-absolute  end-0 btn btn-color2", target: :_blank %>
         </article>
         <nav class="menu">
             <li id="per" data-turbolinks="false">

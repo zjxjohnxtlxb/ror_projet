@@ -6,7 +6,7 @@
     <div class="container">
         <header class='header'>
             <% flash.each do |type, msg| %>
-                <div class="my-2 alert alert-<%= type %>">
+                <div class="my-2 text-center alert alert-<%= type %>">
                     <%= msg %>
                 </div>
             <% end %>

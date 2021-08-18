@@ -5,7 +5,7 @@ class CandidatController < ApplicationController
   before_action :check_redirect_to, except: [:index, :connexion]
   after_action :check_referrer, only: :compte_post
 
-  #rescue_from NoMethodError, with: :please_login
+  rescue_from NoMethodError, with: :please_login
 
   def auto_login
     if session[:token].present?
@@ -217,10 +217,6 @@ class CandidatController < ApplicationController
   end
 
   def partiel_cv
-  end
-
-  def cv_partager
-    send_file 'app/assets/pdfs/cv.pdf', type: 'application/pdf', disposition: 'inline'
   end
 
   def partiel_resultat

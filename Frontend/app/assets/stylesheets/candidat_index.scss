@@ -24,7 +24,7 @@
     /* Box-model */
     display: grid;
     grid-template-columns: 1.5fr 7fr 0.5fr;
-    grid-template-rows: vh_calc(110px) vh_calc(780px) vh_calc(200px);
+    grid-template-rows: vh_calc(110px) vh_calc(780px) vh_calc(210px);
     grid-template-areas:
         "aside header ."
         "aside main ."
@@ -374,7 +374,7 @@
     /* Box-model */
     grid-area: footer;
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 8fr 3fr;
     grid-template-rows: 1fr;
     grid-template-areas:
         "option logo";
@@ -471,7 +471,10 @@
 
 .footer-menu-list {
     /* Positioning */
+    overflow-y: scroll;
+    overflow-x: hidden;
     /* Box-model */
+    height: vh_calc(90px);
     /* Typography */
     font-style: normal;
     font-variant: normal;

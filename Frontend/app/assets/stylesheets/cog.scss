@@ -58,7 +58,15 @@
     margin-right: vh_calc(20px);
     /* Typography */
     /* Visual */
-    background-color: #F4F4F4;
+    &:nth-child(1){
+        background: transparent url(image_path("result_1.png")) center/contain no-repeat;
+    }
+    &:nth-child(2){
+        background: transparent url(image_path("result_2.png")) center/contain no-repeat;
+    }
+    &:nth-child(3){
+        background: transparent url(image_path("result_3.png")) center/contain no-repeat;
+    }
     /* Misc */
 }
 

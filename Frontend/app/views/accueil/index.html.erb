@@ -6,7 +6,7 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <% flash.each do |type, msg| %>
-        <div class="alert alert-<%= type %>">
+        <div class="alert alert-<%= type %> text-center">
           <%= msg %>
         </div>
       <% end %>
@@ -16,7 +16,7 @@
           Bienvenue sur abilitiz, veuillez choisir votre type d'utilisateur
         </p>
         <p>
-          <%= link_to "Recruteur", {controller: "accueil", action: "connectable"}, class: "btn btn-color1 my-2",  id: 'working' %>
+          <%= link_to "Recruteur", {controller: "accueil", action: "connectable"}, class: "btn btn-color1 my-2"%>
           <%= link_to "Candidat", {controller: "candidat", action: "connexion"}, class: "btn btn-color2 my-2" %>
         </p>
         <p>
