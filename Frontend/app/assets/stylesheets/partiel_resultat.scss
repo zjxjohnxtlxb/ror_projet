@@ -103,14 +103,16 @@
     /* Misc */
 }
 
-.menu>li:target>label {
-    /* Positioning */
-    /* Box-model */
-    /* Typography */
-    /* Visual */
-    color: violet;
-    background-color: #6983A0;
-    border-radius: 100px;
+.menu {
+    li:target>label {
+        /* Positioning */
+        /* Box-model */
+        /* Typography */
+        /* Visual */
+        color: violet;
+        background-color: #6983A0;
+        border-radius: 100px;
+    }
     /* Misc */
 }
 
@@ -151,9 +153,10 @@
     /* Misc */
 }
 
-.btn-color2{
-    color:#FFFFFF;
-    &:hover{
-        color:#FFFFFF;
+.btn-color2 {
+    color: #FFFFFF;
+
+    &:hover {
+        color: #FFFFFF;
     }
 }

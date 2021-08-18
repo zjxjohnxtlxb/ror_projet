@@ -216,6 +216,7 @@
     margin-left: vw_calc(50px);
     padding-right: vw_calc(20px);
     padding-left: vw_calc(20px);
+    min-width: vw_calc(300px);
     /* Typography */
     font-style: normal;
     font-variant: normal;
@@ -226,6 +227,7 @@
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     /* Visual */
     background-color: #404C5B;
     box-shadow: 0px 3px 6px #00000005;
@@ -242,6 +244,7 @@
     margin-left: vw_calc(10px);
     padding-right: vw_calc(20px);
     padding-left: vw_calc(20px);
+    min-width: vw_calc(300px);
     /* Typography */
     font-style: normal;
     font-variant: normal;
@@ -250,6 +253,7 @@
     line-height: vh_calc(33px);
     font-family: Poppins;
     color: #FFFFFF;
+    text-align: center;
     text-transform: uppercase;
     /* Visual */
     background-color: #6983A0;

@@ -1,7 +1,6 @@
-//= require social-share-button
 @import '_outil';
 @import '_init';
-
+@import 'social-share-button';
 /* Positioning */
 /* Box-model */
 /* Typography */
@@ -87,6 +86,7 @@
     justify-content: flex-end;
     /* Typography */
     /* Visual */
+    font-family: Poppins;
     /* Misc */
 }
 
@@ -97,13 +97,14 @@
     width: vw_calc(350px);
     height: vh_calc(70px);
     margin-bottom: vh_calc(30px);
+    min-width: vh_calc(300px);
+    padding: 0 5px;
     /* Typography */
     font-style: normal;
     font-variant: normal;
     font-weight: 600;
     font-size: vh_calc(22px);
     line-height: vh_calc(66px);
-    font-family: Poppins;
     color: #FFFFFF;
     text-align: center;
     text-decoration: none;

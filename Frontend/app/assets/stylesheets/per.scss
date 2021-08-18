@@ -56,17 +56,33 @@
     height: vh_calc(450px);
     margin-top: vh_calc(100px);
     margin-right: vh_calc(20px);
+
     /* Typography */
     /* Visual */
-    &:nth-child(1){
+    &:nth-child(1) {
         background: transparent url(image_path("result_4.png")) center/contain no-repeat;
+        box-shadow: 0px 3px 6px #00000005;
+        border: 3px solid #41403E;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
         background: transparent url(image_path("result_5.png")) center/contain no-repeat;
+        box-shadow: 0px 3px 6px #00000005;
+        border: 3px solid #41403E;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
     }
-    &:nth-child(3){
+
+    &:nth-child(3) {
         background: transparent url(image_path("result_6.png")) center/contain no-repeat;
+        box-shadow: 0px 3px 6px #00000005;
+        border: 3px solid #41403E;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
     }
+
     /* Misc */
 }
 
@@ -77,7 +93,7 @@
     justify-self: center;
     min-width: vw_calc(300px);
     height: vh_calc(70px);
-    
+
     /* Typography */
     font-style: normal;
     font-variant: normal;
