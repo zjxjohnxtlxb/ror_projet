@@ -486,6 +486,7 @@
     list-style: none;
     /* Visual */
     /* Misc */
+    &::-webkit-scrollbar { width: 0 !important }
 }
 
 .footer-menu-list>li {

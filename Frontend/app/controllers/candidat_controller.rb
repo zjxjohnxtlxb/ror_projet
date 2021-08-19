@@ -259,6 +259,10 @@ class CandidatController < ApplicationController
     render "jeu/2048"
   end
 
+  def jeu_air_guitar
+    render "jeu/air_guitar"
+  end
+
   private
 
   def profil_score_params

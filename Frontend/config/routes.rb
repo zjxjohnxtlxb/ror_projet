@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get "/jeu/quizz" => :jeu_quizz
     get "/jeu/tower" => :jeu_tower
     get "/jeu/2048" => :jeu_2048
+    get "/jeu/air_guitar" => :jeu_air_guitar
   end
 
   scope controller: :laboratoire do

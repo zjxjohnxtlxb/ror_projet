@@ -59,7 +59,7 @@
     grid-template-rows: vh_calc(300px) vh_calc(300px);
     grid-template-areas:
         "identity social"
-        "logic pich";
+        "logic pitch";
     column-gap: vh_calc(18px);
     padding-bottom: vh_calc(50px);
     margin-top: vh_calc(100px);
@@ -178,7 +178,7 @@
     /* Misc */
 }
 
-.pich>.main-logo>label {
+.pitch>.main-logo>label {
     /* Positioning */
     /* Box-model */
     /* Typography */
@@ -209,10 +209,10 @@
     /* Misc */
 }
 
-.pich {
+.pitch {
     /* Positioning */
     /* Box-model */
-    grid-area: pich;
+    grid-area: pitch;
     /* Typography */
     /* Visual */
     background-color: #EFD786;

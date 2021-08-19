@@ -1,0 +1,16 @@
+<% content_for :css do -%>
+  <% stylesheet_link_tag 'air_guitar', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end -%>
+<main>
+    <video id="video"></video>
+    <audio id="audio" src= <%= asset_path("A.mp3") %> ></audio>
+    <div class="notes">
+      <h3 data-source= <%= asset_path("E.mp3")%>>E</h3>
+      <h3 data-source= <%= asset_path("C.mp3")%>>C</h3>
+      <h3 data-source= <%= asset_path("B.mp3")%>>B</h3>
+      <h3 data-source= <%= asset_path("A.mp3")%>>A</h3>
+      <button id="back" class='btn btn-dark'>Back to profil</button>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
+<%= javascript_pack_tag 'air_guitar'%>
