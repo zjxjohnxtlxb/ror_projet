@@ -74,20 +74,29 @@ class UtilisateurController < ApiController
   end
 
   def auto_login
-    render json: {
-             status: "success",
-             data: {
-               utilisateur: {
-                 id: @utilisateur.id,
-                 nom: @utilisateur.nom,
-                 prenom: @utilisateur.prenom,
-                 email: @utilisateur.email,
-                 dateDeNaissance: @utilisateur.dateDeNaissance ||= "1999/08/15",
-                 age: age((@utilisateur.dateDeNaissance ||= "1999/08/15").to_date),
-                 telephone: @utilisateur.telephone ||= "07 89 01 23 45",
+    if load_payload["roleNo"] == 1
+      render json: {
+               status: "success",
+               data: {
+                 utilisateur: {
+                   id: @utilisateur.id,
+                   nom: @utilisateur.nom,
+                   prenom: @utilisateur.prenom,
+                   email: @utilisateur.email,
+                   dateDeNaissance: @utilisateur.dateDeNaissance ||= "1999/08/15",
+                   age: age((@utilisateur.dateDeNaissance ||= "1999/08/15").to_date),
+                   telephone: @utilisateur.telephone ||= "07 89 01 23 45",
+                 },
                },
-             },
-           }, status: :ok
+             }, status: :ok
+    else
+      render json: {
+               status: "fail",
+               data: {
+                 message: "Error Type Client",
+               },
+             }, status: :unauthorized
+    end
   end
 
   def headers

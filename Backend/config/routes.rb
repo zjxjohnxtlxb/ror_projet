@@ -22,4 +22,15 @@ Rails.application.routes.draw do
 
   patch "/candidats/:candidat_id/profil_score", to: "candidat#update_profil_score"
   get "/candidats/:candidat_id/profil_score", to: "candidat#profil_score"
+
+  get "/candidats", to: "recruteur#candidats"
+  post "/connexion_recruteur", to: "recruteur#login"
+  get "/auto_connexion_recruteur", to: "recruteur#auto_login"
+  
+  get "/equipes/:id", to: "recruteur#equipes"
+  delete "/equipes/:id/:equipe_id/:candidat_id", to: "recruteur#destroy"
+  post "/equipes", to: "recruteur#create"
+  post "/equipe", to: "recruteur#create_equipe"
+  patch "/equipe/:id", to: "recruteur#update_equipe"
+  delete "/equipe/:id", to:  "recruteur#destroy_equipe"
 end

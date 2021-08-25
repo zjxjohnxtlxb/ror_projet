@@ -1,0 +1,50 @@
+<% flash.each do |type, msg| %>
+        <div class="alert alert-<%= type %> text-center">
+          <%= msg %>
+        </div>
+      <% end %>
+<%= tag.div class:"em-edit" do%>
+<%= tag.div class:"em-header bg-dark text-white" do %>
+Equipe Workshop
+<button id='add' class='bg-dark rounded-circle'> <i class="bi bi-plus-circle text-light"></i> </button>
+<% end %>
+<%= tag.div class:"em-body" do %>
+<%= tag.div class:"em-content employees" do %>
+<%= tag.div class:"content" do %>
+<%= render(Equipe::CandidatListComponent.new(candidats:@candidats)) %>
+<% end %>
+<% end %>
+<%= tag.div class:"em-content equipes" do %>
+<%= tag.div class:"content" do %>
+<%= render(Equipe::EquipeComponent.with_collection(@equipes)) %>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+<%= javascript_tag do %>
+$('#add').on('click', ()=>{
+    $('.equipes > .content').append('<%= j render(Equipe::EquipeComponent.new(equipe:{id:'new',recruteur:@recruteur})) %>');
+    let header = $('.equipes > .content').find('.card-header').last();
+    $('<i class="bi bi-x-square"></i>').appendTo(header);
+    header.find('i[class~= "bi-x-square"]').on('click', (event) => {
+        event.target.parentNode.parentNode.remove();
+    });
+    let drop = $('.equipes > .content').find('.card-body').last();
+    drop.find('.equipe-emp').droppable({
+        accept: '.emp > div',
+        activeClass: 'active',
+        drop: function (event, ui) {
+            let item = ui.draggable.clone().css('position', 'static');
+            if (!$(this).has('#'+ ui.draggable.attr('id')).length){
+                item.appendTo($(this));
+                $('<i class="bi bi-x-square-fill"></i>').appendTo(item);
+                item.find('i[class~= "bi-x-square-fill"]').on('click', () => {
+                    item.remove();
+                });
+            }
+        }
+    });
+        });
+<% end %>
+
+

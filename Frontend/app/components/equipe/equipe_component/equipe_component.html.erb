@@ -1,0 +1,40 @@
+<%= form_with scope: :equipe, id: 'post_form', method: :post, :url => { controller: "recruteur" , action: "equipe_manager"} do |form| %>
+<input type="hidden" name="equipe[id]" value=<%= id %>>
+<%= tag.div id:"equipe-#{id}", class:"eqp card mx-2", style:"width: fit-content;" do%>
+    <%= tag.div class:"card-header badge bg-dark text-wrap" do %>
+    <span>Equipe </span>
+    <button id='save' class='save bg-dark rounded float-end'> <i class="bi bi-save text-light"></i> </button>
+    <% end %>
+    <%= tag.div class:"card-body" do %>
+    <div>
+    <% if nomEquipe.present? %>
+    <input class="my-2 text-center" type='text' name="equipe[nomEquipe]" value="<%= nomEquipe %>" style="width: 18em; font-size: 0.8em;"> 
+    <% else %>
+    <input class="my-2 text-center" type='text' name="equipe[nomEquipe]" placeholder="nom d'Equipe" required style="width: 18em; font-size: 0.8em;">
+    <% end %>
+    </div>
+        <%= tag.div class:"card-title badge bg-color1 text-wrap" do %>
+        Recruteur
+        <% end %>
+    <% if niveauImportance.present? %>
+    <span class="badge bg-info text-wrap"><label class="mx-2">niveau(0-5)</label><input type='number' min=0 max=5 name="equipe[niveauImportance]" value=<%= niveauImportance%> style="width: 3em"></span>
+    <% else %>
+    <span class="badge bg-info text-wrap"><label class="mx-2">niveau(0-5)</label><input type='number' min=0 max=5 value=0 name="equipe[niveauImportance]" style="width: 3em"></span>
+    <% end %>
+    <%= tag.div class:"list-group list-group-flush border p-2" do %>
+    <%= render(Equipe::RecruteurComponent.new(recruteur:recruteur)) %>
+    <% end %>
+    <%= tag.div class:"card-title badge bg-color2 text-wrap mt-3" do %>
+    Candidat
+    <% end %>
+    <% if skill.present? %>
+    <span class="badge bg-warning text-wrap">skill id(1-12) <input type='number' min=1 max=12 name="equipe[soft_skill_id]" value=<%= skill %> style="width: 3em;"></span> 
+    <% else %>
+    <span class="badge bg-warning text-wrap">skill id(1-12) <input type='number' min=1 max=12 name="equipe[soft_skill_id]" value=1 style="width: 3em;"></span>
+    <% end %>
+    <%= tag.div class:"equipe-emp list-group list-group-flush border p-2" do %>
+    <%= render(Equipe::CandidatComponent.with_collection(candidats)) %>
+    <% end %>
+    <% end %>
+<% end %>
+<% end %>

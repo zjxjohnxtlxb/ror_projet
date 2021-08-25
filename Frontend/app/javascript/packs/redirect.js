@@ -1,9 +1,10 @@
 /*
  * @Date: 2021-08-06 09:29:36
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-08-09 12:02:50
+ * @LastEditTime: 2021-08-21 21:32:47
  * @FilePath: /Frontend/app/javascript/packs/redirect.js
  */
+
 window.addEventListener("turbolinks:load", function () {
     var check_redirect_to = document.getElementById("container");
     window.onload = function () {

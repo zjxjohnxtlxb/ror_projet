@@ -1,0 +1,10 @@
+<%= tag.div class:"card", style:"width: fit-content;" do%>
+<%= tag.div class:"card-header badge bg-dark text-wrap" do %>
+Candidat List
+<% end %>
+<%= tag.div class:"card-body" do %>
+<%= tag.div class:"emp list-group list-group-flush border p-2" do %>
+<%= render(Equipe::CandidatComponent.with_collection(@candidats)) %>
+<% end %>
+<% end %>
+<% end %>

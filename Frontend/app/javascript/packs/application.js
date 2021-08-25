@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-29 17:20:58
  * @LastEditors: Junxi ZHANG
- * @LastEditTime: 2021-08-18 16:22:35
+ * @LastEditTime: 2021-08-21 21:42:10
  * @FilePath: /Frontend/app/javascript/packs/application.js
  */
 // This file is automatically compiled by Webpack, along with any other files
@@ -13,9 +13,15 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import "channels"
-import 'bootstrap';
+import 'bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+import 'jquery'
+import 'jquery-ui'
+
+require("../components")
+
 require('packs/social-share-button.js.erb')
 
 Rails.start()
 Turbolinks.start()
-

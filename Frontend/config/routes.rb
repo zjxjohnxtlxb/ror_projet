@@ -36,5 +36,13 @@ Rails.application.routes.draw do
 
   scope controller: :laboratoire do
     get "/laboratoire" => :index
-  end 
+  end
+  
+  scope controller: :recruteur do
+    get "/equipe_manager" => :equipe_manager
+    post "/equipe_manager" => :equipe_manager
+    delete "/delete_equipe/:id" => :delete_equipe
+    get "/recruteur/login" => :login
+    post "/recruteur/login" => :login
+  end
 end

@@ -1,0 +1,6 @@
+<%= tag.div id:"candidat-#{@candidat[:id]}", class:"list-group-item badge text-wrap list-group-item-dark text-start rounded mb-1", style:"width:fit-content;" do%>
+<i class="bi bi-person-fill me-1"></i>
+<%= name %>
+<input type="hidden" name="equipe[candidats][]" value=<%= @candidat[:id] %>>
+<% end %>
+

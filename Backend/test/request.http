@@ -6,13 +6,59 @@ POST {{baseUrl}}/connectable
 Content-Type: application/json
 
 ### login recruteur
-POST {{baseUrl}}/connexion
+POST {{baseUrl}}/connexion_recruteur
 Content-Type: application/json
 
 {
     "email": "junxizhang@efficom-lille.fr",
     "password": "password"
 }
+
+###
+POST {{baseUrl}}/equipe
+Content-Type: application/json
+
+{
+    "nomEquipe": "junxizhang@efficom-lille.fr",
+    "soft_skill_id": 2
+}
+
+### auto login recruteur
+GET {{baseUrl}}/auto_connexion_recruteur
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjoxLCJyb2xlTm8iOjAsImV4cCI6MTYyOTc0ODEwMX0.XezGR0xtCS7rbpkHqDP1I_xyddUSkIBH2fY4r0MKmrQ
+
+### candidats
+GET {{baseUrl}}/candidats
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjoxLCJyb2xlTm8iOjAsImV4cCI6MTYyOTc0NTg3M30.rXEjqiLdHKiMx0g9gcJuCYYeOpUu0KtxligjjXy0MBk
+
+### equipes
+GET {{baseUrl}}/equipes/1
+Authorization: Bearer
+
+### delete equipe
+DELETE {{baseUrl}}/equipes/1/1/4
+
+### update equipe
+PATCH {{baseUrl}}/equipe/4
+Content-Type: application/json
+
+{
+    "nomEquipe": "haha"
+}
+
+### delete equipe
+DELETE {{baseUrl}}/equipe/4
+
+### create member equipe
+post {{baseUrl}}/equipes
+Content-Type: application/json
+
+{
+    "recruteur_id": 1,
+    "candidat_id": 3,
+    "equipe_soft_skill_id": 3
+}
+
 ### login candidat
 POST {{baseUrl}}/connexion
 Content-Type: application/json
@@ -26,7 +72,7 @@ GET {{baseUrl}}/auto_connexion
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODM0NjM5NX0.T-CIlPKXcBO_V0wxw50fIcCtifXQmerggFzvYjmJdTw
 ### compte
 GET {{baseUrl}}/compte
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyODM0NjM5NX0.T-CIlPKXcBO_V0wxw50fIcCtifXQmerggFzvYjmJdTw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBYmlsaXRpeiIsInV0aWxpc2F0ZXVyX2lkIjo0LCJyb2xlTm8iOjEsImV4cCI6MTYyOTczODc3NX0.XU-vsF4-HCQxOie5iJ3Ot8FJpkxUZPXqBvLyoAJganw
 
 ### creat client
 POST {{baseUrl}}/utilisateur
