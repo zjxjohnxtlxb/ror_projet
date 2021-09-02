@@ -1,7 +1,7 @@
 ActiveAdmin.register SoftSkillJeu do
   permit_params :soft_skill_id, :jeu_id
   belongs_to :soft_skill, optional: true
-  menu parent: "Param Jeu et Skills", priority: 3, if: proc { SoftSkill.count != 0 && Jeu.count != 0 }
+  menu label: "Soft skill jeux", parent: "Param Jeu et Skills", priority: 3, if: proc { SoftSkill.count != 0 && Jeu.count != 0 }
 
   controller do
     rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found

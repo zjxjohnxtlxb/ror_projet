@@ -1,6 +1,6 @@
 ActiveAdmin.register Jeu do
   permit_params :nomJeu, :lienJeu
-  menu parent: "Param Jeu et Skills", priority: 2
+  menu label: 'Jeux', parent: "Param Jeu et Skills", priority: 2 
   
   controller do
     rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found

@@ -26,7 +26,7 @@
             <article class="compte">
                 <div class="main-logo"></div>
                 <div class="main-option">
-                    <%= link_to "Mon compte", {controller: "candidat", action: "partiel_compte"}, class: "main-option-titre stretched-link" %>
+                    <%= link_to "Mon compte", {controller: "candidat", action: "partiel_compte"}, class: "main-option-titre stretched-link", id: "compte" %>
                     <div class="main-option-description">
                         <div><span><%=  @utilisateur['prenom']%> <span><%=  @utilisateur['nom'] %></div>
                         <div>Mail : <%=  @utilisateur['email']%></div>
@@ -38,7 +38,7 @@
             <article class="cv">
                 <div class="main-logo"></div>
                 <div class="main-option">
-                    <%= link_to "Mon CV", {controller: "candidat", action: "partiel_cv"}, class: "main-option-titre stretched-link" %>
+                    <%= link_to "Mon CV", {controller: "candidat", action: "partiel_cv"}, class: "main-option-titre stretched-link", id: "cv" %>
                     <div class="main-option-description">
                         <div>Mettre à jour</div>
                         <div>Partager le cv Abilitiz</div>
@@ -48,7 +48,7 @@
             <article class="profil">
                 <div class="main-logo"></div>
                 <div class="main-option">
-                    <%= link_to "Mon profil", {controller: "candidat", action: "partiel_profil"}, class: "main-option-titre stretched-link" %>
+                    <%= link_to "Mon profil", {controller: "candidat", action: "partiel_profil"}, class: "main-option-titre stretched-link", id: "profil" %>
                     <div class="main-option-description">
                         <div>Identity test</div>
                         <div>Social game</div>
@@ -60,7 +60,7 @@
             <article class="resultat">
                 <div class="main-logo"></div>
                 <div class="main-option">
-                    <%= link_to "Mon résultats", {controller: "candidat", action: "partiel_resultat"}, class: "main-option-titre stretched-link" %>
+                    <%= link_to "Mon résultats", {controller: "candidat", action: "partiel_resultat"}, class: "main-option-titre stretched-link", id: "resultat" %>
                     <div class="main-option-description">
                         <div>Personnalité</div>
                         <div>Agilité cognitive</div>
@@ -72,3 +72,4 @@
     </div>
 </main>
 <%= javascript_pack_tag 'redirect'%>
+<%= javascript_pack_tag 'anchor'%>
